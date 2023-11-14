@@ -1,0 +1,22 @@
+<header>
+  <h1>Applications to test password strength.</h1>
+</header>
+<main>
+  <div class="wraper">
+    <input [(ngModel)]="password" name="password" id="paswd" type="password" (input)="updatePasswordStrength()">
+    <div class="password-level">{{ passwordLevel }}</div>
+    <div class="sections">
+      <div class="first-section" [ngStyle]="{'background-color': firstSectionColor}"></div>
+      <div class="second-section" [ngStyle]="{'background-color': secondSectionColor}"></div>
+      <div class="third-section" [ngStyle]="{'background-color': thirdSectionColor}"></div>
+    </div>
+  </div>
+</main>
+<footer>
+  <div>Created by Oleksandr Dolbnia</div>
+  <p>I invite you to visit my resume website
+    <a href="https://mycv-c836d.web.app" target="_blank">
+      <button>Go to site</button>
+    </a>
+  </p>
+</footer>
