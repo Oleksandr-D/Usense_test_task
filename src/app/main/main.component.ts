@@ -7,33 +7,34 @@ import { Component } from '@angular/core';
 })
 export class MainComponent {
   public password: string = '';
-  public passwordLevel: string = "Enter more than 8 characters";
+  public passwordLevel: string = "The password must contain at least 8 characters";
   public firstSectionColor: string = 'rgb(143, 143, 143)';
   public secondSectionColor: string = 'rgb(143, 143, 143)';
   public thirdSectionColor: string = 'rgb(143, 143, 143)';
 
   updatePasswordStrength(): void {
-    if (this.password.length > 0 && this.password.length < 8) {
+    if (this.password.length > 0 && this.password.length <= 7) {
       this.firstSectionColor = 'rgb(209, 5, 5)';
       this.secondSectionColor = 'rgb(209, 5, 5)';
       this.thirdSectionColor = 'rgb(209, 5, 5)';
-      this.passwordLevel = 'Your password is...';
+      this.passwordLevel = 'The password must contain at least 8 characters';
     } else {
       this.firstSectionColor = 'rgb(143, 143, 143)';
       this.secondSectionColor = 'rgb(143, 143, 143)';
       this.thirdSectionColor = 'rgb(143, 143, 143)';
+      this.passwordLevel = 'The password must contain at least 8 characters';
     }
 
-    if (this.password.length >= 8 && (this.isOnlyLetters() || this.isOnlyDigits() || this.isOnlySymbols())) {
+    if (this.password.length > 7 && (this.isOnlyLetters() || this.isOnlyDigits() || this.isOnlySymbols())) {
       this.firstSectionColor = 'rgb(209, 5, 5)';
       this.secondSectionColor = 'rgb(143, 143, 143)';
       this.thirdSectionColor = 'rgb(143, 143, 143)';
       this.passwordLevel = 'Easy';
     } else {
-      this.passwordLevel = 'Your password is...';
+      this.passwordLevel = 'The password must contain at least 8 characters';
     }
 
-    if (this.password.length >= 8) {
+    if (this.password.length > 7) {
       if (this.isCombinationOfLettersAndSymbols() || this.isCombinationOfLettersAndDigits() || this.isCombinationOfDigitsAndSymbols()) {
         this.firstSectionColor = 'rgb(243, 235, 2)';
         this.secondSectionColor = 'rgb(243, 235, 2)';
@@ -41,7 +42,7 @@ export class MainComponent {
         this.passwordLevel = 'Medium';
       }}
 
-    if (this.password.length > 8){
+    if (this.password.length > 7){
       if (this.hasAllTypes()) {
         this.firstSectionColor = 'rgb(18, 176, 4';
         this.secondSectionColor = 'rgb(18, 176, 4';

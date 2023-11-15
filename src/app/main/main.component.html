@@ -1,10 +1,13 @@
 <header>
-  <h1>Applications to test password strength.</h1>
+  <h1>Applications to test password strength</h1>
 </header>
 <main>
   <div class="wraper">
     <input [(ngModel)]="password" name="password" id="paswd" type="password" (input)="updatePasswordStrength()">
-    <div class="password-level">{{ passwordLevel }}</div>
+    <div class="">
+      <div *ngIf="password.length > 7" class="password-level">Your password is <b>{{ passwordLevel }}</b></div>
+      <div *ngIf="password.length <= 7" class="password-level">{{ passwordLevel }}</div>
+    </div>
     <div class="sections">
       <div class="first-section" [ngStyle]="{'background-color': firstSectionColor}"></div>
       <div class="second-section" [ngStyle]="{'background-color': secondSectionColor}"></div>
