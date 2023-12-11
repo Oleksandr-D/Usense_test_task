@@ -1,0 +1,11 @@
+<div class="wraper">
+  <div *ngIf="password.length > 7" class="password-level">
+    Your password is <b>{{ passwordLevel }}</b>
+  </div>
+  <div *ngIf="password.length <= 7" class="password-level">{{ passwordLevel }}</div>
+  <div class="sections">
+    <div class="first-section" [ngStyle]="{'background-color': firstSectionColor}"></div>
+    <div class="second-section" [ngStyle]="{'background-color': secondSectionColor}"></div>
+    <div class="third-section" [ngStyle]="{'background-color': thirdSectionColor}"></div>
+  </div>
+</div>
