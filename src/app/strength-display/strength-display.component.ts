@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { PasswordService } from '../shared/servises/password/password.service';
 import { Subscription } from 'rxjs';
 
@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './strength-display.component.html',
   styleUrls: ['./strength-display.component.scss'] 
 })
-export class StrengthDisplayComponent implements OnInit, OnDestroy {
+export class StrengthDisplayComponent implements OnDestroy {
   public password: string = '';
   public passwordLevel: string = '';
   public firstSectionColor: string = '';
@@ -24,8 +24,6 @@ export class StrengthDisplayComponent implements OnInit, OnDestroy {
       this.password = this.passwordService.password; 
     });
   }
-
-  ngOnInit(): void {}
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();

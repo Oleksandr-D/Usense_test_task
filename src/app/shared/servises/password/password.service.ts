@@ -13,8 +13,6 @@ export class PasswordService {
   public passwordSubject = new BehaviorSubject<string>('');
   public password$ = this.passwordSubject.asObservable();
 
-  constructor() { }
-
   updatePasswordStrength(password: string): void {
     this.passwordSubject.next(password);
     this.password = password;

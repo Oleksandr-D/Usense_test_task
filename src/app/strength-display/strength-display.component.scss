@@ -1,28 +1,24 @@
-
 .wraper {
-   padding: 20px;
+  padding: 20px;
 
-   .password-level {
-     margin: 10px;
-   }
+  .password-level {
+    margin: 10px;
+    font-size: 18px;
+    text-align: center;
+  }
 
-   .sections {
-     display: flex;
-     justify-content: center;
-     margin-top: 50px;
-   }
+  .sections {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
 
-   .first-section,
-   .second-section,
-   .third-section {
-     background-color: transparent;
-     width: 170px;
-     height: 50px;
-     margin-left: 5px;
-   }
-
-   .password-level {
-     font-size: 18px;
-     text-align: center;
-   }
- }
+  .first-section,
+  .second-section,
+  .third-section {
+    background-color: transparent;
+    width: 170px;
+    height: 50px;
+    margin-left: 5px;
+  }
+}
